@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset="UTF-8">
+    <title>eCommerce Dashboard - Orders</title>
+    <meta name="description" content="Users">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mainApp/css/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#info").click(function() {
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#infoBlock").offset().top
+                }, 2000);
+            });
+            $("#drinks").click(function() {
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#drinksBlock").offset().top
+                }, 2000);
+            });
+            $("#food").click(function() {
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#foodBlock").offset().top
+                }, 2000);
+            });
+            $("#beans").click(function() {
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#beansBlock").offset().top
+                }, 2000);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar" id="myNavbar">
+        <img class="navImg" src="{% static 'mainApp/img/logoPlaceholder.jpg' %}" alt="Copper Tree Logo">
+        <!-- <h1 class="navTitle" id="home">Copper Tree</h1> -->
+        <a class="navLink" id="info">Info</a>
+        <a class="navLink" id="drinks">Drinks</a>
+        <a class="navLink" id="food">Food</a>
+        <a class="navLink" id="beans">Beans</a>
+    </nav>
+
+    <div class="backPicBlock">
+        <img class="backPic" src="{% static 'mainApp/img/backgroundImagePlaceholder.jpg' %}" alt="Background Picture">
+    </div>
+    <div id="infoBlock">
+        <h1>INFO INFO INFO INFO</h1>
+    </div>
+    <div id="drinksBlock">
+        <h1>DRINKS DRINKS DRINKS DRINKS</h1>
+    </div>
+    <div id="foodBlock">
+        <h1>FOOD FOOD FOOD FOOD</h1>
+    </div>
+    <div id="beansBlock">
+        <h1>BEANS BEANS BEANS BEANS</h1>
+    </div>
+
+</body>
+
+
+</html>

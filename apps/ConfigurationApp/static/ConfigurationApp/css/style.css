@@ -1,0 +1,27 @@
+* {
+    vertical-align: baseline;
+    font-family: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.urlCol {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 20vw;
+}
+.actionCol {
+    max-width: 10vw;
+}
+td form {
+    display: inline-block;
+}
+
+.flashes {
+    list-style-type: none;
+}

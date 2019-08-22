@@ -1,0 +1,56 @@
+* {
+    vertical-align: baseline;
+    font-family: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.inlineBlock {
+    display: inline-block;
+}
+
+#myNavbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.navLink {
+    cursor: pointer;
+    color: white !important;
+}
+.navTitle {
+    cursor: pointer;
+    color: white;
+}
+.placeholder {
+    height: 1000px
+}
+.spacer {
+    height: 200px;
+}
+
+.navImg {
+    height: 70px;
+    width: 200px;
+    margin: -5px;
+}
+
+.backPicBlock {
+    width: 100%;
+}
+
+.backPic {
+    width: 100%;
+}
+
+
+
+
+
+

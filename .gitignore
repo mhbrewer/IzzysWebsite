@@ -1,0 +1,5 @@
+ArtistPictures/
+__pycache__/
+.vscode/
+venv/
+db.sqlite3
