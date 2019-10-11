@@ -1,8 +1,9 @@
 from django.conf.urls import url
 
-from .views import home
+from .views import homePage, communityPage
 
 urlpatterns = [
-    url(r'home$', home),
-    url(r'$', home),
+    url(r'community$', communityPage),
+    url(r'', homePage),
 ]
+

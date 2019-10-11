@@ -56,7 +56,7 @@ ROOT_URLCONF = 'cTreeV3.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'apps/mainApp/templates/mainApp')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,6 +122,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # For Uploading Pictures
-MEDIA_ROOT = os.path.join(BASE_DIR, 'apps/ConfigurationApp')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'cTreeV3/media')
 
 MEDIA_URL = '/media/'

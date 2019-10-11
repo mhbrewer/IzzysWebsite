@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset="UTF-8">
+    <title>eCommerce Dashboard - Orders</title>
+    <meta name="description" content="Users">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mainApp/css/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <form action="/home" method="GET">
+        <button type="submit" class="btn btn-light">Back</button>
+    </form>
+    <div id="artistsBlock">
+        <div class="line"></div>
+        <h1>Artists</h1>
+        <!-- <img src="{{MEDIA_URL}}/apps/mainApp/templates/mainApp/cowboy.png"> -->
+        {% for artist in displayedArtists %}
+            <div class="artistBlock">
+                <h3>{{ artist.firstName }} {{ artist.lastName }}</h3>
+                {% for picture in displayedPictures %}
+                    {% if picture.artist.id == artist.id %}
+                        <h4>{{ picture.title }}</h4>
+                        <img src="{{ picture.image.url }}" alt="{{ picture.title }}">
+                        {{ picture.image }}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <div class="pastArtistsBlock">
+            <h2>Past Artists:</h2>
+            {% for r in pastArtists %}
+                <p>{{ r.firstName }} {{ artist.lastName }} - <a href={{r.url}}>{{ r.url }}</a></p>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+    
+</body>

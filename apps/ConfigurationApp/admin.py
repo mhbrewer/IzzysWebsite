@@ -12,12 +12,14 @@ class RoasterAdmin(admin.ModelAdmin):
 @admin.register(Bean)
 class BeanAdmin(admin.ModelAdmin):
     list_display = ('title', 'roaster', 'priority', 'isDisplayed')
-    list_editable = ('isDisplayed',)
+    list_editable = ('priority', 'isDisplayed')
 
 @admin.register(Artist)
 class ArtistAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('firstName', 'isDisplayed',)
+    list_editable = ('isDisplayed',)
 
 @admin.register(Picture)
 class PictureAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('title', 'artist', 'isDisplayed')
+    list_editable = ('isDisplayed',)
