@@ -20,8 +20,6 @@ from django.conf import settings
 from django.shortcuts import redirect
 
 urlpatterns = [
-    # url(r'^$', redirect1),
-    # url('^home/', include('apps.mainApp.urls')),
     url('^admin/', admin.site.urls),
 ]
 

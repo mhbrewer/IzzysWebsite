@@ -1,4 +1,5 @@
 from django.db import models
+import os
 # from django.contrib.auth.models import User
 
 
@@ -62,6 +63,9 @@ class Picture(models.Model):
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
     objects = PictureManager()
+
+    def filename(self):
+        return os.path.basename(self.image.name)
 
     def __str__(self):
         return self.title

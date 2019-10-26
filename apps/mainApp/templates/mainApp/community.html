@@ -28,7 +28,6 @@
                     {% if picture.artist.id == artist.id %}
                         <h4>{{ picture.title }}</h4>
                         <img src="{{ picture.image.url }}" alt="{{ picture.title }}">
-                        {{ picture.image }}
                     {% endif %}
                 {% endfor %}
             </div>
