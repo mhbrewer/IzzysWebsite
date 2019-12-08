@@ -9,6 +9,8 @@
     font-family: sans-serif;
 }
 
+/* General */
+
 html {
     height: 100%;
 }
@@ -22,6 +24,8 @@ html {
     display: inline-block;
 }
 
+/* Navbar */
+
 #myNavbar {
     overflow: hidden;
     background-color: #333;
@@ -33,22 +37,27 @@ html {
 .navLink {
     cursor: pointer;
     color: white !important;
+
+}
+.navLink:hover {
+    text-decoration: none;
 }
 .navTitle {
     cursor: pointer;
     color: white;
-}
-.placeholder {
-    height: 1000px
-}
-.spacer {
-    height: 200px;
 }
 
 .navImg {
     height: 70px;
     width: 200px;
     margin: -5px;
+}
+
+/* Home Page */
+
+#fillerBlock {
+    min-width: 100%;
+    min-height: 4.7em;
 }
 
 #backPicBlock {
@@ -61,22 +70,8 @@ html {
     text-align: center;
 }
 
-.backImg {
-    width: 100%;
-    position: absolute;
-    left: 0em;
-    top: 4.7em;
-    z-index: -1;
-}
-
-#fillerBlock {
-    min-width: 100%;
-    min-height: 4.7em;
-}
-
 #infoBlock {
     display: inline-block;
-    /* margin-left: 40%; */
     margin-top: 100px;
     opacity: 0.9;
     background-color: white;
@@ -131,12 +126,25 @@ html {
     list-style-type: none;
 }
 
+/* Community Page */
+
 .btn {
     border: 2px solid grey;
     margin: 30px;
     padding: 10px;
 }
 
+.pictureBlock {
+    display: inline-block;
+    width: 100px;
+    border: solid black 1px;
+    margin: 3px;
+    padding: 3px;
+}
+
+.pictureBlock img {
+    width: 100%;
+}
 
 
 

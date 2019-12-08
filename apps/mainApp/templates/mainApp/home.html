@@ -81,7 +81,11 @@
         <div class="pastRoastersBlock">
             <h2>Past Roasters:</h2>
             {% for r in pastRoasters %}
-                <p>{{ r.companyName }} - <a href={{r.url}}>{{ r.url }}</a></p>
+                {% if r.url %}
+                    <p>{{ r.companyName }} - <a href={{r.url}}>{{ r.url }}</a></p>
+                {% else %}
+                    <p>{{ r.companyName }}</p>
+                {% endif %}
             {% endfor %}
         </div>
     </div>

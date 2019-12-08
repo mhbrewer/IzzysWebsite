@@ -5,7 +5,20 @@ from apps.ConfigurationApp.models import Bean, Roaster, Artist, Picture
 
 from django.views.generic import ListView
 
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+def cleanPictureDirectory():
+    allPictures = Picture.objects.all()
+    artistPicsPath = os.path.join(settings.MEDIA_ROOT, 'ArtistPictures')
+    filesInDir = os.listdir(os.path.join(settings.MEDIA_ROOT, 'ArtistPictures'))
+    for file in filesInDir:
+        fileShouldBeDeleted = True
+        fileName = os.fsdecode(file)
+        for picture in allPictures:
+            if fileName == picture.filename():
+                fileShouldBeDeleted = False
+        if fileShouldBeDeleted:
+            filePath = os.path.join(artistPicsPath, fileName)
+            os.remove(filePath)
+
 
 def homePage(request):
     context = {
@@ -16,22 +29,7 @@ def homePage(request):
     return render(request, 'mainApp/home.html', context)
 
 def communityPage(request):
-    allPictures = Picture.objects.all()
-    print(settings.BASE_DIR)
-    print(settings.MEDIA_ROOT)
-    artistPicsPath = os.path.join(settings.MEDIA_ROOT, 'ArtistPictures')
-    print(artistPicsPath)
-    filesInDir = os.listdir(os.path.join(settings.MEDIA_ROOT, 'ArtistPictures'))
-    print(allPictures[0].filename())
-    for file in filesInDir:
-        fileShouldBeDeleted = True
-        fileName = os.fsdecode(file)
-        for picture in allPictures:
-            if fileName == picture.filename():
-                fileShouldBeDeleted = False
-        if fileShouldBeDeleted:
-            filePath = os.path.join(artistPicsPath, fileName)
-            os.remove(filePath)
+    cleanPictureDirectory()
     context = {
         "displayedArtists": Artist.objects.filter(isDisplayed = True),
         "pastArtists": Artist.objects.filter(isDisplayed = False),

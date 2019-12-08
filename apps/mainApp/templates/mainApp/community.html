@@ -25,11 +25,14 @@
             <div class="artistBlock">
                 <h3>{{ artist.firstName }} {{ artist.lastName }}</h3>
                 {% for picture in displayedPictures %}
-                    {% if picture.artist.id == artist.id %}
-                        <h4>{{ picture.title }}</h4>
-                        <img src="{{ picture.image.url }}" alt="{{ picture.title }}">
-                    {% endif %}
+                    <div class="pictureBlock">
+                        {% if picture.artist.id == artist.id %}
+                            <h4>{{ picture.title }}</h4>
+                            <img src="{{ picture.image.url }}" alt="{{ picture.title }}">
+                        {% endif %}
+                    </div>
                 {% endfor %}
+                <h6>Website: <a href={{artist.url}}>{{ artist.url }}</a></h6>
             </div>
         {% endfor %}
         <div class="pastArtistsBlock">
