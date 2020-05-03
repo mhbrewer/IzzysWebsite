@@ -36,3 +36,11 @@ def communityPage(request):
         "displayedPictures": Picture.objects.filter(isDisplayed = True),
     }
     return render(request, 'mainApp/community.html', context)
+
+def drinkMenuPage(request):
+    context = {}
+    return render(request, 'mainApp/drinkMenu.html', context)
+
+def foodMenuPage(request):
+    context = {}
+    return render(request, 'mainApp/foodMenu.html', context)

@@ -32,6 +32,7 @@ if settings.DEBUG:
 # For the front-end customer display.
 # We need the default to be at the end.
 defaulturlpattern = [
+    url('^qrcodes', include('apps.qrCodeApp.urls')),
     url('^', include('apps.mainApp.urls'))
 ]
 
