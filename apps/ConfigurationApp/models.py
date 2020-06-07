@@ -69,3 +69,31 @@ class Picture(models.Model):
 
     def __str__(self):
         return self.title
+
+class FoodManager(models.Manager):
+    pass
+class Food(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=200, blank=True)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    isDisplayed = models.BooleanField(default=True)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+    objects = FoodManager()
+
+    def __str__(self):
+        return self.name
+
+class BeverageManager(models.Manager):
+    pass
+class Beverage(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=200, blank=True)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    isDisplayed = models.BooleanField(default=True)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+    objects = FoodManager()
+
+    def __str__(self):
+        return self.name

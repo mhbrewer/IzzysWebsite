@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Bean, Roaster, Artist, Picture
+from .models import Bean, Roaster, Artist, Picture, Food, Beverage
 
 
 
@@ -22,4 +22,14 @@ class ArtistAdmin(admin.ModelAdmin):
 @admin.register(Picture)
 class PictureAdmin(admin.ModelAdmin):
     list_display = ('title', 'artist', 'isDisplayed')
+    list_editable = ('isDisplayed',)
+
+@admin.register(Food)
+class FoodAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description', 'isDisplayed')
+    list_editable = ('isDisplayed',)
+
+@admin.register(Beverage)
+class BeverageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description', 'isDisplayed')
     list_editable = ('isDisplayed',)

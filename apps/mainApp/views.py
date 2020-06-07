@@ -1,7 +1,7 @@
 import os
 from django.shortcuts import render, redirect
 from django.conf import settings
-from apps.ConfigurationApp.models import Bean, Roaster, Artist, Picture
+from apps.ConfigurationApp.models import Bean, Roaster, Artist, Picture, Food, Beverage
 
 from django.views.generic import ListView
 
@@ -37,10 +37,14 @@ def communityPage(request):
     }
     return render(request, 'mainApp/community.html', context)
 
-def drinkMenuPage(request):
-    context = {}
-    return render(request, 'mainApp/drinkMenu.html', context)
+def beverageMenuPage(request):
+    context = {
+        "displayedBeverages": Beverage.objects.filter(isDisplayed = True)
+    }
+    return render(request, 'mainApp/beverageMenu.html', context)
 
 def foodMenuPage(request):
-    context = {}
+    context = {
+        "displayedFoods": Food.objects.filter(isDisplayed = True)
+    }
     return render(request, 'mainApp/foodMenu.html', context)

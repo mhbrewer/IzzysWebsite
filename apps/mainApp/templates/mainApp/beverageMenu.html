@@ -17,5 +17,16 @@
     <form action="/home" method="GET">
         <button type="submit" class="btn btn-light">Back</button>
     </form>
-    DRINK MENU
+    <div class="beveragesBlock">
+        <h1>Beverage</h1>
+        {% for bev in displayedBeverages %}
+            <div class="beverageBlock">
+                <h2>{{ bev.name }}</h2>
+                {% if bev.description %}
+                    <div>{{ bev.description }}</div>
+                {% endif %}
+                <div>{{ bev.price }}</div>
+            </div>
+        {% endfor %}
+    </div>
 </body>
