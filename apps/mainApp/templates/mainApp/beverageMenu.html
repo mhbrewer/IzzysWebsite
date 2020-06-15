@@ -13,19 +13,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 </head>
 
-<body>
+<body class="menuBody">
     <form action="/home" method="GET">
         <button type="submit" class="btn btn-light">Back</button>
     </form>
-    <div class="beveragesBlock">
+    <div class="menuBlock">
         <h1>Beverage</h1>
         {% for bev in displayedBeverages %}
-            <div class="beverageBlock">
-                <h2>{{ bev.name }}</h2>
+            <div class="menuItemBlock">
+                <h2>{{ bev.name }}</h2> <a>{{ bev.price }}</a>
                 {% if bev.description %}
-                    <div>{{ bev.description }}</div>
+                    <ul>
+                        <li>{{ bev.description }}</li>
+                    </ul>
                 {% endif %}
-                <div>{{ bev.price }}</div>
             </div>
         {% endfor %}
     </div>

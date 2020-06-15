@@ -12,11 +12,11 @@
 /* General */
 
 html {
-    height: 100%;
+    min-height: 100%;
 }
 
 .homeBody {
-    height: 100%;
+    min-height: 100%;
     background-color: rgb(255, 255, 204)
 }
 
@@ -34,10 +34,10 @@ html {
     width: 100%;
     z-index: 2;
 }
+
 .navLink {
     cursor: pointer;
     color: white !important;
-
 }
 .navLink:hover {
     text-decoration: none;
@@ -50,7 +50,6 @@ html {
 .navImg {
     height: 70px;
     width: 200px;
-    margin: -5px;
 }
 
 /* Home Page */
@@ -72,7 +71,7 @@ html {
 
 #infoBlock {
     display: inline-block;
-    margin-top: 100px;
+    margin: 100px;
     opacity: 0.9;
     background-color: white;
     border-radius: 5px;
@@ -99,7 +98,7 @@ html {
 }
 
 .roasterBlock {
-    margin-left: 30%;
+    margin-left: 35%;
 }
 
 .roasterBlock h4 {
@@ -130,7 +129,7 @@ html {
 
 .btn {
     border: 2px solid grey;
-    margin: 30px;
+    margin: 30px 30px 0px 30px;
     padding: 10px;
 }
 
@@ -146,6 +145,58 @@ html {
     width: 100%;
 }
 
+/* Drink + Food Menu */
 
+.menuBody {
+    min-height: 100%;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient( 150deg, rgba(0, 0, 0, 0.65), transparent);
+}
 
+.menuBlock {
+    width: 640px;
+    padding: 20px;
+    margin: 7% auto;
+    border: tan solid 12px;
+    border-top: #bda27e solid 12px;
+    border-left: #b19876 solid 12px;
+    border-bottom: #c9ad86 solid 12px;
+    box-shadow: 0px 0px 6px 5px rgba(58, 18, 13, 0), 0px 0px 0px 2px #c2a782, 0px 0px 0px 4px #a58e6f, 
+        3px 4px 8px 5px rgba(0, 0, 0, 0.5);
+    background-image: radial-gradient( circle at left 30%, rgba(34, 34, 34, 0.3), rgba(34, 34, 34, 0.3) 80px, 
+        rgba(34, 34, 34, 0.5) 100px, rgba(51, 51, 51, 0.5) 160px, rgba(51, 51, 51, 0.5)), 
+        linear-gradient( 215deg, transparent, transparent 100px, #222 260px, #222 320px, transparent), 
+        radial-gradient( circle at right, #111, rgba(51, 51, 51, 1));
+    background-color: #333;
+}
+
+.menuBlock h1 {
+    text-decoration: underline;
+    font-family: 'Permanent Marker', cursive;
+    color: rgba(238, 238, 238, 0.7);
+    text-align: center;
+}
+
+.menuItemBlock {
+    vertical-align: middle;
+    font-family: 'Permanent Marker', cursive;
+    color: rgba(238, 238, 238, 0.7);
+}
+.menuItemBlock h2 {
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.menuItemBlock ul {
+    list-style-type: "- ";
+}
+
+.menuItemBlock li {
+    margin-left: 20px;
+}
 
