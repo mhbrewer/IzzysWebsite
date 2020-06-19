@@ -8,15 +8,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {% load static %}
     <link rel="stylesheet" href="{% static 'mainApp/css/style.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#navbarList").hide();
+
+            $(".navbar-toggler").click(function() {
+                $("#navbarList").slideToggle();
+            });
+        });
+    </script>
 </head>
 
 <body class="menuBody">
-    <form action="/home" method="GET">
-        <button type="submit" class="btn btn-light">Back</button>
-    </form>
+    <nav class="navbar" id="myNavbar">
+        <img class="navImg" src="{% static 'mainApp/img/CopperTree_Logo.png' %}" alt="Copper Tree Logo">
+        <button class="navbar-toggler" type="button">
+            <i class="hamburger fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarList">
+            <ul>
+                <li>
+                    <a class="navLink" id="info" href="/">Info</a>
+                </li>
+                <li>
+                    <a class="navLink" id="drinks" href="/drinkMenu">Drinks</a>
+                </li>
+                <li>
+                    <a class="navLink" id="food" href="/foodMenu">Food</a>
+                </li>
+                <li>
+                    <a class="navLink" id="beans" href="/">Beans</a>
+                </li>
+                <li>
+                    <a class="navLink" id="community" href="/community">Community</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="menuBlock">
         <h1>Beverage</h1>
         {% for bev in displayedBeverages %}

@@ -52,6 +52,19 @@ html {
     width: 200px;
 }
 
+.hamburger {
+    color: rgb(180,77,63);
+    font-size: 48px;
+}
+
+#navbarList {
+    background-color: transparent;
+}
+
+#navbarList ul {
+    list-style: none;
+}
+
 /* Home Page */
 
 #fillerBlock {
@@ -158,8 +171,8 @@ html {
 }
 
 .menuBlock {
-    width: 640px;
-    padding: 20px;
+    width: 90%;
+    padding: 2% 5% 2% 5%;
     margin: 7% auto;
     border: tan solid 12px;
     border-top: #bda27e solid 12px;
@@ -179,6 +192,7 @@ html {
     font-family: 'Permanent Marker', cursive;
     color: rgba(238, 238, 238, 0.7);
     text-align: center;
+    font-size: 4em;
 }
 
 .menuItemBlock {
@@ -187,9 +201,13 @@ html {
     color: rgba(238, 238, 238, 0.7);
 }
 .menuItemBlock h2 {
-    font-size: 20px;
+    font-size: 2.5em;
     font-weight: bold;
     display: inline-block;
+}
+
+.menuItemBlock a {
+    font-size: 1.3em;
 }
 
 .menuItemBlock ul {
@@ -198,5 +216,7 @@ html {
 
 .menuItemBlock li {
     margin-left: 20px;
+    font-size: 1.3em;
 }
+
 
