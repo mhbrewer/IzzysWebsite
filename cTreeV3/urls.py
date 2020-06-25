@@ -21,13 +21,11 @@ from django.shortcuts import redirect
 
 # For the admin/configuration back-end
 urlpatterns = [
-    url('^admin', admin.site.urls),
     url('^admin/', admin.site.urls),
 ]
 
 # For pictures
-if settings.DEBUG: 
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # For the front-end customer display.
 # We need the default to be at the end.

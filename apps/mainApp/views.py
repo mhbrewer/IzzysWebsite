@@ -48,3 +48,6 @@ def foodMenuPage(request):
         "displayedFoods": Food.objects.filter(isDisplayed = True)
     }
     return render(request, 'mainApp/foodMenu.html', context)
+
+def rerouteToAdmin(request):
+    return redirect('/admin/')
