@@ -12,9 +12,12 @@ def cleanPictureDirectory():
     for file in filesInDir:
         fileShouldBeDeleted = True
         fileName = os.fsdecode(file)
+        print(fileName)
         for picture in allPictures:
             if fileName == picture.filename():
                 fileShouldBeDeleted = False
+        if fileName == ".gitignore":
+            fileShouldBeDeleted = False
         if fileShouldBeDeleted:
             filePath = os.path.join(artistPicsPath, fileName)
             os.remove(filePath)
