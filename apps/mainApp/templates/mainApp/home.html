@@ -66,14 +66,26 @@
         <div id="infoBlock">
             <h1>Hours and Location</h1>
             <ul>
-                <li>Monday-Friday: 7:30am-3:30pm</li>
-                <li>Saturday: 8am-3pm</li>
-                <li>Sunday: Closed</li>
+                {% if hoursByDay.monfri %}
+                    <li>Monday-Friday: {{ hoursByDay.monfri.hours }}</li>
+                {% endif %}
+                {% if hoursByDay.sat %}
+                    <li>Saturday: {{ hoursByDay.sat.hours }}</li>
+                {% endif %}
+                {% if hoursByDay.sun %}
+                    <li>Sunday: {{ hoursByDay.sun.hours }}</li>
+                {% endif %}
             </ul>
-            <p>2406 10th Ave E, Seattle, WA 98102</p>
+            {% if contactInfo.address %}
+                <p>{{ contactInfo.address.contactInfo }}</p>
+            {% endif %}
             <h3>Contact Us</h3>
-            <p>Phone: (206)000-0000</p>
-            <p>Email: CopperTree.Seattle@gmail.com</p>
+            {% if contactInfo.phone %}
+                <p>Phone: {{ contactInfo.phone.contactInfo }}</p>
+            {% endif %}
+            {% if contactInfo.email %}
+                <p>Email: {{ contactInfo.email.contactInfo }}</p>
+            {% endif %}
         </div>
     </div>
 

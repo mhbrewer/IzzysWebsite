@@ -1,7 +1,7 @@
 import os
 from django.shortcuts import render, redirect
 from django.conf import settings
-from apps.ConfigurationApp.models import Bean, Roaster, Artist, Picture, Food, Beverage
+from apps.ConfigurationApp.models import Bean, Roaster, Artist, Picture, Food, Beverage, Hours, ContactInfo
 
 from django.views.generic import ListView
 
@@ -12,7 +12,6 @@ def cleanPictureDirectory():
     for file in filesInDir:
         fileShouldBeDeleted = True
         fileName = os.fsdecode(file)
-        print(fileName)
         for picture in allPictures:
             if fileName == picture.filename():
                 fileShouldBeDeleted = False
@@ -24,10 +23,24 @@ def cleanPictureDirectory():
 
 
 def homePage(request):
+    hoursByDay = {
+        "monfri": Hours.objects.filter(daysOfTheWeek__iexact = "mf").filter(isDisplayed = True).first(),
+        "sat": Hours.objects.filter(daysOfTheWeek__iexact = "sa").filter(isDisplayed = True).first(),
+        "sun": Hours.objects.filter(daysOfTheWeek__iexact = "su").filter(isDisplayed = True).first(),
+    }
+
+    contactInfo = {
+        "address": ContactInfo.objects.filter(contactType__iexact = "address").filter(isDisplayed = True).first(),
+        "phone": ContactInfo.objects.filter(contactType__iexact = "phone").filter(isDisplayed = True).first(),
+        "email": ContactInfo.objects.filter(contactType__iexact = "email").filter(isDisplayed = True).first(),
+    }
+
     context = {
         "displayedRoasters": Roaster.objects.filter(isDisplayed = True),
         "pastRoasters": Roaster.objects.filter(isDisplayed = False),
         "displayedBeans": Bean.objects.filter(isDisplayed = True).order_by('priority'),
+        "hoursByDay": hoursByDay,
+        "contactInfo": contactInfo,
     }
     return render(request, 'mainApp/home.html', context)
 

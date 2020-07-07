@@ -23,7 +23,6 @@ class Roaster(models.Model):
 
 class BeanManager(models.Manager):
     pass
-# class BeanManager(models):
 class Bean(models.Model):
     title = models.CharField(max_length=50)
     blend = models.CharField(max_length=50, blank=True)
@@ -93,7 +92,29 @@ class Beverage(models.Model):
     isDisplayed = models.BooleanField(default=True)
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
-    objects = FoodManager()
+    objects = BeverageManager()
 
     def __str__(self):
         return self.name
+
+class HoursManager(models.Manager):
+    pass
+class Hours(models.Model):
+    hours = models.CharField(max_length=50)
+    daysOfTheWeek = models.CharField(max_length=2)
+    isDisplayed = models.BooleanField(default=True)
+    objects = HoursManager()
+
+    def __str__(self):
+        return self.daysOfTheWeek
+
+class ContactInfoManager(models.Manager):
+    pass
+class ContactInfo(models.Model):
+    contactInfo = models.CharField(max_length=50)
+    contactType = models.CharField(max_length=50)
+    isDisplayed = models.BooleanField(default=True)
+    objects = ContactInfoManager()
+
+    def __str__(self):
+        return self.contactType

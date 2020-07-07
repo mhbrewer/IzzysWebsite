@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Bean, Roaster, Artist, Picture, Food, Beverage
+from .models import Bean, Roaster, Artist, Picture, Food, Beverage, Hours, ContactInfo
 
 
 
@@ -33,3 +33,13 @@ class FoodAdmin(admin.ModelAdmin):
 class BeverageAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'isDisplayed')
     list_editable = ('isDisplayed',)
+
+@admin.register(Hours)
+class HoursAdmin(admin.ModelAdmin):
+    list_display = ('daysOfTheWeek', 'hours', 'isDisplayed')
+    list_editable = ('hours', 'isDisplayed')
+
+@admin.register(ContactInfo)
+class ContactInfoAdmin(admin.ModelAdmin):
+    list_display = ('contactType', 'contactInfo', 'isDisplayed')
+    list_editable = ('contactInfo', 'isDisplayed')
